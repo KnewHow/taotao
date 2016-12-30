@@ -1,0 +1,15 @@
+0:0:0:0:0:0:0:1 - - [29/Dec/2016:17:34:12 +0800] "GET /taotao HTTP/1.1" 404 963 http-bio-8083-exec-1 203
+0:0:0:0:0:0:0:1 - - [29/Dec/2016:17:34:49 +0800] "GET /css/taotao.css HTTP/1.1" 200 109779 http-bio-8083-exec-3 15
+0:0:0:0:0:0:0:1 - - [29/Dec/2016:17:34:49 +0800] "GET /images/taotao-logo.gif HTTP/1.1" 200 6060 http-bio-8083-exec-4 32
+0:0:0:0:0:0:0:1 - - [29/Dec/2016:17:34:49 +0800] "GET /images/20130725.png HTTP/1.1" 200 275 http-bio-8083-exec-5 0
+0:0:0:0:0:0:0:1 - - [29/Dec/2016:17:34:49 +0800] "GET /images/20130330A_2.png HTTP/1.1" 200 8252 http-bio-8083-exec-6 0
+0:0:0:0:0:0:0:1 - - [29/Dec/2016:17:34:49 +0800] "GET / HTTP/1.1" 200 107970 http-bio-8083-exec-2 9491
+0:0:0:0:0:0:0:1 - - [29/Dec/2016:17:34:49 +0800] "GET /images/loading-jd.gif HTTP/1.1" 200 166 http-bio-8083-exec-7 0
+0:0:0:0:0:0:0:1 - - [29/Dec/2016:17:34:49 +0800] "GET /images/20130330B_1.png HTTP/1.1" 200 4620 http-bio-8083-exec-8 0
+0:0:0:0:0:0:0:1 - - [29/Dec/2016:17:34:49 +0800] "GET /images/20130330C.png HTTP/1.1" 200 6900 http-bio-8083-exec-10 16
+0:0:0:0:0:0:0:1 - - [29/Dec/2016:17:34:49 +0800] "GET /images/virtuals-20140606.png HTTP/1.1" 200 3316 http-bio-8083-exec-9 32
+0:0:0:0:0:0:0:1 - - [29/Dec/2016:17:34:50 +0800] "GET /js/jquery-1.2.6.min.js HTTP/1.1" 200 30775 http-bio-8083-exec-1 15
+0:0:0:0:0:0:0:1 - - [29/Dec/2016:17:34:50 +0800] "GET /js/jquery-extend.js HTTP/1.1" 200 1802 http-bio-8083-exec-9 0
+0:0:0:0:0:0:0:1 - - [29/Dec/2016:17:34:50 +0800] "GET /js/lib-v1.js HTTP/1.1" 200 122808 http-bio-8083-exec-8 16
+0:0:0:0:0:0:0:1 - - [29/Dec/2016:17:34:50 +0800] "GET /js/taotao.js HTTP/1.1" 200 597 http-bio-8083-exec-1 16
+0:0:0:0:0:0:0:1 - - [29/Dec/2016:17:34:50 +0800] "GET /js/home.js HTTP/1.1" 200 50433 http-bio-8083-exec-9 0

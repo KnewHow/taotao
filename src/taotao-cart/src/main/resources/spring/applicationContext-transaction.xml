@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd">
+
+	<!-- 配置事务管理器 -->
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<!-- 配置数据源 -->
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+
+	<!-- 定义AOP切面处理器 -->
+	<bean class="com.taotao.manage.datasource.DataSourceAspect" id="dataSourceAspect">
+		<!-- 指定事务策略 -->
+		<property name="txAdvice" ref="tx" />
+		<!-- 指定slave方法的前缀（非必须） -->
+		<property name="slaveMethodStart" value="query,find,get" />
+	</bean>
+
+	<!-- 使用spring的声明式事务管理 -->
+	<tx:advice id="tx" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="query*" read-only="true" />
+			<tx:method name="find*" read-only="true" />
+			<tx:method name="select*" read-only="true" />
+			<tx:method name="get*" read-only="true" />
+
+			<tx:method name="add*" read-only="false" />
+			<tx:method name="delete*" read-only="false" />
+			<tx:method name="update*" read-only="false" />
+			<tx:method name="insert*" read-only="false" />
+			<tx:method name="save*" read-only="false" />
+		</tx:attributes>
+	</tx:advice>
+
+	<!-- 配置切入点 -->
+	<aop:config>
+		<!-- execution中的第一个*号用来匹配方法的返回类型，这里的*代表所有的返回类型 cn.itcast.usermanager.service.impl..*.*(..) 
+			表示在cn.itcast.usermanager.service.impl包及其子包下面所有的类和方法，..指的是包以及子包下面 -->
+		<aop:pointcut expression="execution(* com.taotao.manage.service.impl..*.*(..))"
+			id="txPoint" />
+		<aop:advisor advice-ref="tx" pointcut-ref="txPoint" />
+		
+		<!-- 将切面应用到自定义的切面处理器上，-9999保证该切面优先级最高执行 -->
+		<aop:aspect ref="dataSourceAspect" order="-9999">
+			<aop:before method="before" pointcut-ref="txPoint" />
+		</aop:aspect>
+	</aop:config>
+</beans>

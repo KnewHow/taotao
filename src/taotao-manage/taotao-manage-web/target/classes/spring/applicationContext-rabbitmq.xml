@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rabbit="http://www.springframework.org/schema/rabbit"
+	xsi:schemaLocation="http://www.springframework.org/schema/rabbit
+	http://www.springframework.org/schema/rabbit/spring-rabbit-1.4.xsd
+	http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+	<!-- 创建RabbitMQ的连接工厂 -->
+	<rabbit:connection-factory id="connectionFactory"
+		host="${rabbitmq.host}" port="${rabbitmq.port}" username="${rabbitmq.username}"
+		password="${rabbitmq.password}" virtual-host="${rabbitmq.vhost}" />
+
+	<rabbit:topic-exchange name="TAOTAO-ITEM-EXCHANGE"
+		auto-declare="true" durable="true"></rabbit:topic-exchange>
+
+	<!-- MQ管理，包括队列和交换机 -->
+	<rabbit:admin connection-factory="connectionFactory" />
+	<!-- 定义交换机的模板 -->
+	<rabbit:template id="template" connection-factory="connectionFactory"
+		exchange="TAOTAO-ITEM-EXCHANGE"></rabbit:template>
+
+</beans>

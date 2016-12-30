@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<server port="8080">
+  <module context="usermanager" name="usermanager" path="D:/project/taotaoshop/src/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/usermanager" type="j2ee"/>
+</server>

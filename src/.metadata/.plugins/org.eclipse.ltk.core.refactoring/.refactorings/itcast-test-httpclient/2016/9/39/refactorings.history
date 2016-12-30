@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;ClientEvictExpiredConnections.java&apos; to &apos;taotao-web/src/main/java/com.taotao.web.httpclient&apos;&#x0D;&#x0A;- Original project: &apos;itcast-test-httpclient&apos;&#x0D;&#x0A;- Destination element: &apos;taotao-web/src/main/java/com.taotao.web.httpclient&apos;&#x0D;&#x0A;- Original element: &apos;cn.itcast.test.httpclient.ClientEvictExpiredConnections.java&apos;" description="Copy compilation unit" destination="=taotao-web/src\/main\/java&lt;com.taotao.web.httpclient" element1="/src\/main\/java&lt;cn.itcast.test.httpclient{ClientEvictExpiredConnections.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1474454635016" units="1" version="1.0"/>
+</session>
